@@ -1,28 +1,28 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 export function Alert({
-  type = "information",
+  type = 'information',
   heading,
   children,
   closable,
   onClose,
 }) {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(true)
   function handleCloseClick() {
-    setVisible(false);
+    setVisible(false)
     if (onClose) {
-      onClose();
+      onClose()
     }
   }
-  if (!visible) return null;
+  if (!visible) return null
   return (
     <div>
       <div>
         <span
           role="img"
-          aria-label={type === "warning" ? "Warning" : "Information"}
+          aria-label={type === 'warning' ? 'Warning' : 'Information'}
         >
-          {type === "warning" ? "Warning" : "Information"}
+          {type === 'warning' ? 'Warning' : 'Information'}
         </span>
         <span>{heading}</span>
       </div>
@@ -35,5 +35,5 @@ export function Alert({
       )}
       <div>{children}</div>
     </div>
-  );
+  )
 }
